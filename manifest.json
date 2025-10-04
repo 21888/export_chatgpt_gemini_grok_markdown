@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Export ChatGPT/Gemini/Grok conversations as Markdown",
+  "version": "1.0.1",
+  "description": "Export chat history from ChatGPT and Grok websites to normal format as Markdown, which can be opened via typora exactly.",
+  "author": "Elior",
+  "icons": {
+    "16":"16.png",
+    "48":"48.png",
+    "128":"128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chatgpt.com/*",
+        "*://grok.com/*",
+        "*://gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "downloads"
+  ],
+  "action": {
+    "default_title": "Export ChatGPT/Gemini/Grok conversations as Markdown"
+  }
+}
